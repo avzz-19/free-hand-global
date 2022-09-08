@@ -1,11 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
-import {StyleSheet, Text, Image} from 'react-native';
+import {StyleSheet, Text, Image, View, TouchableOpacity} from 'react-native';
 import Drive_Us_Icon from '../assets/Drive_Us_Icon.png';
 import TransformationIcon from '../assets/TransformationIcon.png';
 import Horizontal_Circle from '../assets/Horizontal_Circle.png';
 import {Bullet} from './Bullets';
-import {Card} from './Card';
 import Scroll from '../assets/Scroll.png';
 import Link_Arrow from '../assets/Link_Arrow.png';
 import Ecosystem from '../assets/Ecosystem.png';
@@ -47,14 +45,14 @@ export const Page2 = () => {
         Heading="Transformational"
         Para="Smart Product Transformation is the product-driven transformation of your business model. Identify the potential of your product portfolio and summarize it in a holistic IoT strategy for your company."
         ImgPath={TransformationIcon}
-        styleImg={{width: 250, height: 265}}
+        styleImg={{width: 250, height: 265.5}}
       />
       <Bullet
         No="02"
         Heading="Interdisciplinary"
         Para="Use our award-winning team for the complex development of successful IoT products and ensure the highest quality in UX and industrial design, software engineering, hardware manufacturing and management consulting."
         ImgPath={Horizontal_Circle}
-        styleImg={{width: 253, height: 149}}
+        styleImg={{width: 253.5, height: 149}}
       />
       <Bullet
         No="03"
@@ -65,20 +63,10 @@ export const Page2 = () => {
         <Text style={styles.h1}>Four steps to your success</Text>
         <Text style={styles.h3}>How we work</Text>
       </View>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          marginHorizontal: 50,
-        }}>
-        <Image
-          source={Link_Arrow}
-          style={{
-            width: 40,
-            height: 40,
-            marginRight: 15,
-            marginVertical: 24,
-          }}></Image>
+      <View style={styles.row}>
+        <TouchableOpacity>
+          <Image source={Link_Arrow} style={styles.arrow}></Image>
+        </TouchableOpacity>
         <Text style={styles.text}>Go to the monkey box case</Text>
       </View>
       <Carousel arr={carouselCards} />
@@ -127,5 +115,16 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#CFEEFF',
     lineHeight: 22,
+  },
+  arrow: {
+    width: 40,
+    height: 40,
+    marginRight: 15,
+    marginVertical: 24,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginHorizontal: 50,
   },
 });

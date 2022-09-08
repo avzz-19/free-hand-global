@@ -20,9 +20,11 @@ import {
   ImageBackground,
   Image,
   View,
+  TouchableOpacity,
 } from 'react-native';
 import {PurpleBox} from './components/Box';
 import {UserPage} from './components/User';
+import Hamburger from './assets/Hamburger.png';
 
 const App = () => {
   return (
@@ -31,7 +33,12 @@ const App = () => {
         <ImageBackground
           source={Banner_Image}
           style={{width: '100%', height: 550}}>
-          <Text style={styles.highlight}>EXPERTEN</Text>
+          <View style={styles.row}>
+            <Text style={styles.highlight}>EXPERTEN</Text>
+            <TouchableOpacity>
+              <Image source={Hamburger} width="24" height="24" />
+            </TouchableOpacity>
+          </View>
           <View style={{alignItems: 'center'}}>
             <Image source={Overlay} width="351" height="351" />
           </View>
@@ -97,6 +104,12 @@ const styles = StyleSheet.create({
     display: 'flex',
     alignItems: 'center',
     marginTop: -302,
+  },
+  row: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingRight: 10,
   },
 });
 
