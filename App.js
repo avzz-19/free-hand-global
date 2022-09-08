@@ -8,9 +8,10 @@
 
 import React from 'react';
 import Banner_Image from './assets/Banner_Image.png';
-import {Page2} from './components/page2';
-import {Page3} from './components/page3';
+import {Page2} from './components/Page2';
+import {Page3} from './components/Page3';
 import Scroll from './assets/Scroll.png';
+import Overlay from './assets/Overlay.png';
 import {
   SafeAreaView,
   ScrollView,
@@ -20,7 +21,7 @@ import {
   Image,
   View,
 } from 'react-native';
-import {PurpleBox} from './components/box';
+import {PurpleBox} from './components/Box';
 import {UserPage} from './components/User';
 
 const App = () => {
@@ -31,6 +32,9 @@ const App = () => {
           source={Banner_Image}
           style={{width: '100%', height: 550}}>
           <Text style={styles.highlight}>EXPERTEN</Text>
+          <View style={{alignItems: 'center'}}>
+            <Image source={Overlay} width="351" height="351" />
+          </View>
           <View style={styles.container}>
             <Text style={styles.h2}>IOT products from one source</Text>
             <Text style={styles.h1}>How smart is your product?</Text>
@@ -42,7 +46,11 @@ const App = () => {
             <Image source={Scroll} style={{marginVertical: 40}}></Image>
           </View>
           <View>
-            <PurpleBox />
+            <PurpleBox
+              title="CONSULTING"
+              bigHeading="Think big start small"
+              desc="Development of your IoT strategy"
+            />
           </View>
         </ImageBackground>
         <Page2 />
@@ -88,7 +96,7 @@ const styles = StyleSheet.create({
   container: {
     display: 'flex',
     alignItems: 'center',
-    marginTop: 50,
+    marginTop: -302,
   },
 });
 

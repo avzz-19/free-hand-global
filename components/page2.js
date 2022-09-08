@@ -4,12 +4,33 @@ import {StyleSheet, Text, Image} from 'react-native';
 import Drive_Us_Icon from '../assets/Drive_Us_Icon.png';
 import TransformationIcon from '../assets/TransformationIcon.png';
 import Horizontal_Circle from '../assets/Horizontal_Circle.png';
-import {Bullet} from './bullets';
-import {Card} from './card';
+import {Bullet} from './Bullets';
+import {Card} from './Card';
 import Scroll from '../assets/Scroll.png';
 import Link_Arrow from '../assets/Link_Arrow.png';
 import Ecosystem from '../assets/Ecosystem.png';
+import CardImg from '../assets/CardImg.png';
+import Blueberry from '../assets/Blueberry.jpeg';
+import ThirdImg from '../assets/ThirdImg.png';
+import Carousel from './Carousel';
 export const Page2 = () => {
+  const carouselCards = [
+    {
+      count: '01',
+      imgSource: CardImg,
+      des: 'Design thinking methods tailored to Smart Connected Devices lead to a clear structure and a memorable visualization of ideas, use cases and value propositions.',
+    },
+    {
+      count: '02',
+      imgSource: Blueberry,
+      des: 'Fresh blueberries are a popular summer treat. They have a sweet flavor, and they are succulent and nutritious.Blueberries can be eaten freshly picked or incorporated into a variety of recipes.',
+    },
+    {
+      count: '03',
+      imgSource: ThirdImg,
+      des: 'The iPhone is a line of smartphones designed by Apple Inc. These devices use Apple iOS mobile operating system. The first-generation iPhone was announced by then-Apple CEO Steve Jobs.',
+    },
+  ];
   return (
     <View style={{marginTop: 300, marginHorizontal: 30}}>
       <Text style={styles.h1}>What drives us</Text>
@@ -60,7 +81,7 @@ export const Page2 = () => {
           }}></Image>
         <Text style={styles.text}>Go to the monkey box case</Text>
       </View>
-      <Card />
+      <Carousel arr={carouselCards} />
       <View style={{alignItems: 'center'}}>
         <Image source={Scroll} style={{marginVertical: 40}}></Image>
       </View>

@@ -1,6 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
-import {StyleSheet, Text, Image} from 'react-native';
+import {StyleSheet, Text, Image, View} from 'react-native';
 
 export const Bullet = props => {
   const {No, Heading, Para, ImgPath, styleImg} = props;

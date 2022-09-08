@@ -3,23 +3,21 @@ import {View} from 'react-native';
 import {StyleSheet, Text, Image} from 'react-native';
 import CardImg from '../assets/CardImg.png';
 
-export const Card = () => {
+export const Card = props => {
+  const {imgSource = {CardImg}, count = '01', des = ''} = props;
+  console.log({imgSource});
   return (
     <View style={styles.cardStyle}>
       <View style={{alignItems: 'center'}}>
         <Image
-          source={CardImg}
+          source={imgSource}
           style={{width: 218, height: 230, marginTop: 50}}
         />
       </View>
       <View style={{alignItems: 'flex-start'}}>
-        <Text style={styles.para}>01</Text>
+        <Text style={styles.para}>{count}</Text>
       </View>
-      <Text style={styles.para}>
-        Design thinking methods tailored to Smart Connected Devices lead to a
-        clear structure and a memorable visualization of ideas, use cases and
-        value propositions.
-      </Text>
+      <Text style={styles.para}>{des}</Text>
     </View>
   );
 };

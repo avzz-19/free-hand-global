@@ -1,8 +1,9 @@
 import React from 'react';
-import {View} from 'react-native';
-import {StyleSheet, Text, Image} from 'react-native';
+import {StyleSheet, Text, Image, View} from 'react-native';
 import Service_Icon from '../assets/Service_Icon.png';
-export const PurpleBox = () => {
+import LinearGradient from 'react-native-linear-gradient';
+export const PurpleBox = props => {
+  const {title, bigHeading, desc} = props;
   return (
     <View
       style={{
@@ -11,11 +12,17 @@ export const PurpleBox = () => {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <View style={styles.right} />
-      <View style={styles.box}>
-        <Text style={styles.h1}>CONSULTING</Text>
-        <Text style={styles.h2}>Think big start small</Text>
-        <Text style={styles.h3}>Development of your IoT strategy</Text>
+      <LinearGradient
+        colors={['#192239', '#4E2154']}
+        style={styles.right}></LinearGradient>
+      <LinearGradient
+        style={styles.box}
+        start={{x: 0, y: 0}}
+        end={{x: 1, y: 0}}
+        colors={['#4E2154', '#192239']}>
+        <Text style={styles.h1}>{title}</Text>
+        <Text style={styles.h2}>{bigHeading}</Text>
+        <Text style={styles.h3}>{desc}</Text>
         <View
           style={{
             justifyContent: 'flex-end',
@@ -24,8 +31,10 @@ export const PurpleBox = () => {
           }}>
           <Image source={Service_Icon} style={styles.imgstyle} />
         </View>
-      </View>
-      <View style={styles.left} />
+      </LinearGradient>
+      <LinearGradient
+        style={styles.left}
+        colors={['#192239', '#4E2154']}></LinearGradient>
     </View>
   );
 };
@@ -36,13 +45,19 @@ const styles = StyleSheet.create({
   },
   box: {
     boxSizing: 'border-box',
-    backgroundColor: '#372154',
+    backgroundColor: 'transparent',
     borderWidth: 1,
     borderColor: '#EF7D00',
     borderRadius: 16,
     height: 391,
     width: 279,
     marginHorizontal: 16,
+  },
+  linearGradient: {
+    flex: 1,
+    paddingLeft: 15,
+    paddingRight: 15,
+    borderRadius: 5,
   },
   h1: {
     color: '#EF7D00',
@@ -81,7 +96,7 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     width: 279,
     height: 319,
-    backgroundColor: '#4E2154',
+    backgroundColor: 'transparent',
   },
   left: {
     // left: -800.87,
@@ -91,6 +106,6 @@ const styles = StyleSheet.create({
     borderRadius: 16,
     width: 279,
     height: 319,
-    backgroundColor: '#4E2154',
+    backgroundColor: 'transparent',
   },
 });

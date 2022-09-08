@@ -1,6 +1,5 @@
 import React from 'react';
-import {View} from 'react-native';
-import {StyleSheet, Text, Image} from 'react-native';
+import {StyleSheet, Text, View, Image} from 'react-native';
 export const Page3 = () => {
   return (
     <View>
